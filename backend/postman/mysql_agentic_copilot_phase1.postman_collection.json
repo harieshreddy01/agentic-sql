@@ -1,0 +1,113 @@
+{
+  "info": {
+    "name": "MySQL Agentic Copilot - Phase 1",
+    "_postman_id": "dummy-id-1234",
+    "description": "Postman collection for Phase 1 backend of MySQL Agentic Copilot.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Connect to DB",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"host\": \"localhost\",\n  \"user\": \"root\",\n  \"password\": \"password\",\n  \"database\": \"your_database\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/connect",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "connect"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Schema",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/schema",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "schema"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Generate SQL from NL",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nl_query\": \"Show total salary per department\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/generate-sql",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "generate-sql"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Run SQL Query",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sql\": \"SELECT 1\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/run-query",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "run-query"
+          ]
+        }
+      }
+    }
+  ]
+}
