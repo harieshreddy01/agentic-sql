@@ -48,3 +48,10 @@ Thumbs.db
 
 # Docker
 .dockerignore
+
+# extension
+agentic-sql-extension/out
+agentic-sql-extension/dist
+**/node_modules/
+.vscode-test/
+*.vsix
