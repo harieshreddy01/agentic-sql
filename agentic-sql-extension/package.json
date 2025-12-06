@@ -12,12 +12,38 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "agentic-sql-extension.helloWorld",
-        "title": "Hello World"
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "agenticSql",
+          "title": "Agentic SQL",
+          "icon": "$(database)"
+        }
+      ]
+    },
+    "views": {
+      "agenticSql": [
+        {
+          "id": "agenticSqlView",
+          "name": "Agentic SQL"
+        },
+        {
+          "id": "agenticSqlChat",
+          "name": "Agentic SQL Chat",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Agentic SQL",
+      "properties": {
+        "agenticSql.baseUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "Base URL for the API"
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
